@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { type Customer, API_URL } from '../../lib/domain';
+  import { type Customer, API_URL_CUSTOMER } from '../../lib/domain';
 
   export let customer: Customer;
 
   const onClickDelete = async() => {
-    await fetch(API_URL, {
+    await fetch(API_URL_CUSTOMER, {
       method: "DELETE",
       headers: {
         'Content-Type': 'application/json',
@@ -17,7 +17,7 @@
 
   const submit = async() => {
     const method = customer.id === null ? "POST" : "PUT";
-    await fetch(API_URL, {
+    await fetch(API_URL_CUSTOMER, {
       method: method,
       headers: {
         'Content-Type': 'application/json',

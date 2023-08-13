@@ -16,4 +16,21 @@ export const DefaultCustomer: Customer = {
   email: "",
 }
 
-export const API_URL = "http://localhost:9000/";
+export interface Product {
+  id: number | null,
+  name: string,
+  price: number,
+  cost: number,
+  tax_rate: number,
+}
+
+export const DefaultProduct: Product = {
+  id: null,
+  name: "",
+  price: 0,
+  cost: 0,
+  tax_rate: 0,
+}
+
+export const API_URL_CUSTOMER = "http://localhost/api/customer/";
+export const API_URL_PRODUCT = "http://localhost/api/product/";

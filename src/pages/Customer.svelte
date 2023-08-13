@@ -1,20 +1,19 @@
 <script lang="ts">
-  import { type Customer, API_URL, DefaultCustomer } from '../lib/domain';
+  import { type Customer, API_URL_CUSTOMER, DefaultCustomer } from '../lib/domain';
   import Header from '../components/Header.svelte';
   import List from '../components/customer/List.svelte';
-  import Detail from '../components/customer/Detail.svelte';
   import Form from '../components/customer/Form.svelte';
 
   let customers: Customer[];
   let detail: Customer = DefaultCustomer;
 
   const getCustomerById = async(id: number) => {
-    const result = await fetch(`${API_URL}${id.toString()}`);
+    const result = await fetch(`${API_URL_CUSTOMER}${id.toString()}`);
     detail = await result.json() as Customer;
   }
 
   const fetchCustomers = async() => {
-    const result = await fetch(API_URL);
+    const result = await fetch(API_URL_CUSTOMER);
     customers = await result.json() as Customer[];
   }
 
