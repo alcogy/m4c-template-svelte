@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type Customer, API_URL } from '../../lib/domain';
+  import { type Customer, API_URL_PRODUCT } from '../../lib/domain';
   export let customer: Customer;
 
   const onClickEdit = async() => {
@@ -7,7 +7,7 @@
   }
   
   const onClickDelete = async() => {
-    await fetch(API_URL, {
+    await fetch(API_URL_PRODUCT, {
       method: "DELETE",
       headers: {
         'Content-Type': 'application/json',
